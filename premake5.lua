@@ -2,9 +2,8 @@ project "GLFW"
     kind "StaticLib"
     language "C"
 
-    targetdir = ("bin/" .. outputdir .. "/%{prj.name}")
-    objdir = ("bin-int/" .. outputdir .. "/%{prj.name}")
-
+    targetdir ("bin/" .. outputdir .. "/%{prj.name}")
+    objdir ("bin-int/" .. outputdir .. "/%{prj.name}")
 
     files
     {
@@ -42,5 +41,5 @@ project "GLFW"
             "_CRT_SECURE_NO_WARNINGS"
         }
 
-    filter { "system:windows", "configuration:Release" }
+    filter { "system:windows", "configurations:Release" }
         buildoptions "/MT"
